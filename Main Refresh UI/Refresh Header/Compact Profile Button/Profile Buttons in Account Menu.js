@@ -398,14 +398,61 @@ class SteamProfileEnhancer {
     this.init()
   }
 
-  // Определение языка / Language detection
+  // Map Steam / BCP-47 tags onto TRANSLATIONS keys.
+  // Upstream used split("-")[0], so zh-CN became zh and fell back to English.
   detectLanguage() {
-    const lang =
+    const raw = (
       document.documentElement.lang ||
       document.querySelector('meta[name="language"]')?.content ||
       navigator.language ||
-      "en"
-    return lang.split("-")[0].toLowerCase()
+      ""
+    ).toLowerCase()
+
+    const aliases = {
+      schinese: "zh-CN",
+      "zh-cn": "zh-CN",
+      "zh-hans": "zh-CN",
+      zh: "zh-CN",
+      tchinese: "zh-TW",
+      "zh-tw": "zh-TW",
+      "zh-hk": "zh-TW",
+      "zh-hant": "zh-TW",
+      koreana: "ko",
+      japanese: "ja",
+      english: "en",
+      russian: "ru",
+      spanish: "es",
+      german: "de",
+      french: "fr",
+      italian: "it",
+      portuguese: "pt",
+      brazilian: "pt",
+      polish: "pl",
+      turkish: "tr",
+      ukrainian: "uk",
+      thai: "th",
+      czech: "cs",
+      danish: "da",
+      dutch: "nl",
+      finnish: "fi",
+      norwegian: "no",
+      swedish: "sv",
+      hungarian: "hu",
+      romanian: "ro",
+      bulgarian: "bg",
+      greek: "el",
+    }
+
+    if (aliases[raw]) return aliases[raw]
+    if (TRANSLATIONS[raw]) return raw
+
+    const short = raw.split("-")[0]
+    if (short === "zh") {
+      if (raw.includes("tw") || raw.includes("hk") || raw.includes("hant")) return "zh-TW"
+      return "zh-CN"
+    }
+    if (TRANSLATIONS[short]) return short
+    return "en"
   }
 
   // Получение перевода / Get translation
