@@ -1,0 +1,33 @@
+---
+description: Update CHANGES.md persistent diffs only
+alwaysApply: true
+---
+
+# Changelog required
+
+This repo is a Simplified / Chinese fork of NEVKO-UI.
+`origin` is `kuusei/NEVKO-Simplified`. `upstream` is the original `dotFelixan/NEVKO-UI`.
+
+## Every change
+
+After any code, style, config, or sync work, update `CHANGES.md` in the same turn:
+
+1. Only edit 「相对上游的持续改动」 so it matches the current fork vs upstream.
+2. Do not add dated 「改动日志」 entries.
+3. On upstream sync, also update 「同步基线」.
+4. CSS diffs vs upstream must have a Chinese comment starting with `改动:`.
+
+Do not finish a task that leaves `CHANGES.md` stale.
+
+## Syncing upstream
+
+1. Keep local/fork customizations listed in 「相对上游的持续改动」.
+2. Fast-forward or rebase onto `upstream/main`.
+3. Re-apply those persistent diffs on the new tree (paths move often).
+4. Update 「同步基线」 with the new upstream commit, version, and date.
+
+## Do not
+
+- Overwrite Chinese `skin.json` labels or Simplified branding with upstream English / NEVKO-UI identity.
+- Change Refresh Menu unless the user explicitly asks.
+- Add extra docs unless the user asked.

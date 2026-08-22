@@ -2,6 +2,7 @@
 ╔══════════════════════════════════════════════════════════════════════════════╗
 ║                                LIST LIBRARY                                  ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
+  本分支改动：标了「改动:」的规则相对上游 NEVKO-UI 有差异。
 */
 
 /* ─────────────────────────────────────────────────────────────────────────── */
@@ -18,10 +19,13 @@
 
 /* Bigger Text */
 ._2-O4ZG0KrnSrzISHBKctFQ {
-  font-size: 14px;
+  font-size: 12px; /* 改动: 字号 14px 改为 12px */
 }
 
 /* Bigger List */
+div.ReactVirtualized__Grid__innerScrollContainer {
+  margin-bottom: 60px; /* 改动: 给固定底栏留出空间 */
+}
 div.ReactVirtualized__Grid__innerScrollContainer > div.Panel {
   height: 28px !important;
 }
@@ -31,7 +35,7 @@ div.ReactVirtualized__Grid__innerScrollContainer > div.Panel {
 ._2-O4ZG0KrnSrzISHBKctFQ ._1vO6BoiVslZgs1kqDGdUs8 {
   padding-bottom: 4px;
   padding-top: 4px;
-  padding-left: 23px;
+  padding-left: 4px; /* 改动: 左内边距 23px 改为 4px */
 }
 
 /* Remove Scroll */
@@ -65,17 +69,21 @@ div.ReactVirtualized__Grid__innerScrollContainer > div.Panel {
   position: fixed;
   margin: 6px 6px;
   background: var(--secondary-background) !important;
+  background-image: none !important; /* 改动: 底栏去掉渐变 */
   z-index: 20;
-  border-radius: 6px;
+  border-radius: 10px; /* 改动: 圆角 6px 改为 10px，与列表一致 */
   outline: 2px solid var(--main-background);
 }
 ._20QAC4WMXm8qFE8waUT5oo {
   background-color: color-mix(in srgb, var(--secondary-background) 75%, black) !important;
+  background-image: none !important; /* 改动: 保留内凹底色，去掉背景图 */
   margin: 2px 6px 6px;
+  border-radius: 6px; /* 改动: 「游戏」筛选内条加圆角 */
 }
 ._1ZS_xta5HMXzR8JgxDH6n7 ._2PF_m-I5yte3WnQhpcz8RC {
   background-color: color-mix(in srgb, var(--secondary-background) 75%, black) !important;
-  border-radius: 4px;
+  background-image: none !important;
+  border-radius: 6px; /* 改动: 圆角 4px 改为 6px */
   z-index: 1;
 }
 
@@ -92,33 +100,39 @@ div.ReactVirtualized__Grid__innerScrollContainer > div.Panel {
   padding: 8px;
   padding-top: 0;
   padding-left: 0;
+  background-image: none !important; /* 改动: 侧栏铺平，去掉渐变 */
 }
 ._3x1HklzyDs4TEjACrRO2tB {
   padding: 4px;
   border-radius: 10px;
   background: var(--secondary-background) !important;
+  background-image: none !important; /* 改动: 保留 10px 圆角，去掉渐变 */
 }
 
 /* Game List Items */
 ._3km84Vscc0uS91f0RN_30C {
   border: unset;
-  outline: 1px solid var(--accent);
+  outline: unset; /* 改动: 去掉强调色描边 */
   background-color: var(--accent-transparent);
-  border-radius: 4px;
+  border-radius: 2px; /* 改动: 圆角 4px 改为 2px */
   transition: .2s linear;
-  margin-right: auto;
-  margin-left: auto;
-  width: 99%;
+  margin-right: 0; /* 改动: 行铺满，不再 99% 居中 */
+  margin-left: 0;
+  width: auto;
 }
 ._2sYIghGVXJr6tsQVvcryy8._1dcGFHhye9BeEOg7CkFNQG {
   border: unset;
-  outline: 1px solid var(--accent);
+  outline: unset; /* 改动: 去掉强调色描边 */
   transition: .2s linear;
 }
 
 ._1ZS_xta5HMXzR8JgxDH6n7 ._2PF_m-I5yte3WnQhpcz8RC:hover {
-  background-color: color-mix(in srgb, var(--secondary-background) 95%, white) !important;
+  background-color: color-mix(in srgb, var(--secondary-background) 88%, white) !important; /* 改动: 悬停混色 95% 改为 88% */
   transition: .2s linear;
+}
+._1ZS_xta5HMXzR8JgxDH6n7 ._2PF_m-I5yte3WnQhpcz8RC ._15aGnszAf3gHD-PFdJBoFD {
+  margin: 2px 0 -8px auto !important;
+  border-radius: 6px; /* 改动: 「游戏」按钮圆角与内条对齐 */
 }
 
 /* Z-Index Management */
@@ -131,16 +145,20 @@ div.ReactVirtualized__Grid__innerScrollContainer > div.Panel {
   z-index: 50 !important;
 }
 
-/* Search Bar */
+/* Collection / category headers */
 ._2sYIghGVXJr6tsQVvcryy8 {
-  margin-left: auto;
-  margin-right: auto;
-  width: 95%;
+  margin-left: 0; /* 改动: 标题行铺满，不再 95% 居中 */
+  margin-right: 0;
+  width: auto;
   height: 22px;
-  border-radius: 4px;
+  border-radius: 2px; /* 改动: 圆角 4px 改为 2px */
   border: unset;
-  margin-top: 3px;
-  background: color-mix(in srgb, var(--secondary-background) 90%, white) !important;
+  margin-top: 0; /* 改动: 去掉 3px 间距 */
+  /* 改动: 不要标题底色，同时盖掉 Steam 左侧蓝灰渐变 */
+  background: none !important;
+}
+._2sYIghGVXJr6tsQVvcryy8:hover {
+  background: none !important; /* 改动: 悬停也不用 Steam #3e4e69 */
 }
 
 .uE7Pj4tb2n3_Bx4vjEX0a.rkfSfuCLRt8sqpkXJqxYo {
@@ -158,15 +176,12 @@ div.ReactVirtualized__Grid__innerScrollContainer > div.Panel {
     background-color: var(--secondary-background);
     filter: brightness(2);
 }
-._1ZS_xta5HMXzR8JgxDH6n7 ._2PF_m-I5yte3WnQhpcz8RC ._15aGnszAf3gHD-PFdJBoFD {
-    margin: 2px 0 -8px auto !important;
-}
 
 /* Category Headers */
+/* 改动: 分类标题左对齐，无单独底色 */
 ._3cV3O8FnPQqpJO5kIMUlLX {
   color: #aeaeaf;
-  padding: 3px 3px 12px;
-  justify-content: center;
+  padding: 3px 9px 3px 0;
 }
 ._2mZ8LlvoUiyeEUtIWuTri {
   font-weight: bold;
@@ -175,7 +190,12 @@ div.ReactVirtualized__Grid__innerScrollContainer > div.Panel {
 /* Utility Classes */
 .uE7Pj4tb2n3_Bx4vjEX0a {
   display: flex;
-  position: fixed;
+  /* 改动: 折叠箭头改为绝对定位，不再 fixed */
+  position: absolute;
+  bottom: 45px;
+  right: 0px;
+  width: 32px !important;
+  height: 32px !important;
 }
 ._1PxXcZNpN0cCxbnjEoTdYT {
   display: none;
@@ -195,8 +215,7 @@ div.ReactVirtualized__Grid__innerScrollContainer > div.Panel {
 
 ._3pSPluBgf0NeR1kkCLWMhR {
   transition: .2s linear;
-  background-color: color-mix(in srgb, var(--secondary-background) 75%, black) !important;
-  border-radius: 4px;
+  border-radius: 2px; /* 改动: 去掉深色底，圆角 4px 改为 2px */
 }
 ._3pSPluBgf0NeR1kkCLWMhR.eNLOx4LVceeMwRvTVWh3 {
   transition: .2s linear;
@@ -257,7 +276,7 @@ div.ReactVirtualized__Grid__innerScrollContainer > div.Panel {
   border-radius: 2px;
 }
 ._3pSPluBgf0NeR1kkCLWMhR._30KGSfPjPskFlnrSxBfkiK {
-  margin-left: 8px;
+  margin-left: 0; /* 改动: 左边距 8px 改为 0 */
 }
 
 /* ─────────────────────────────────────────────────────────────────────────── */
@@ -275,12 +294,10 @@ div.ReactVirtualized__Grid__innerScrollContainer > div.Panel {
 }
 
 /* Game Item Cards */
+/* 改动: 去掉卡片底色、固定宽度和阴影 */
 ._1wJJQwnV-ssGrL0xveFujy.Panel {
-  background: color-mix(in srgb, var(--secondary-background) 90%, white) !important;
-  width: 370px;
   border-radius: 10px;
   outline: 1px solid color-mix(in srgb, var(--secondary-background) 80%, gray) !important;
-  box-shadow: 0px 0.11em 9px 0px #00000099;
   margin-left: auto;
   margin-right: auto;
   cursor: pointer;
@@ -301,6 +318,7 @@ div.ReactVirtualized__Grid__innerScrollContainer > div.Panel {
 ._1-llQnFWxBo1kyWdkDFyXp {
   background: color-mix(in srgb, var(--secondary-background) 85%, white) !important;
   border-radius: 10px;
+  flex-shrink: 0; /* 改动: 封面不被压扁 */
 }
 ._1-llQnFWxBo1kyWdkDFyXp .SVGIcon_Button {
   display: block;
@@ -854,7 +872,7 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb._3nJyYxGQ3kdwwabPmxNnMe:hover {
   ._2r4TK4BAuU-J4FuF_O7v_5
   ._31ptFGGMZrSQc5BCX1e5lm:has(._5uvIN6jXDXzzck59F-nhv._1TGl52GwsFQg3CXUYvThP-) {
   background: color-mix(in srgb, var(--secondary-background) 90%, gray) !important;
-  border-radius: 10px;
+  border-radius: 10px !important;
   margin-right: 34.5%;
 }
 
@@ -1112,34 +1130,33 @@ div.NarrowRightPanel ._1FnJ6dPuknQFQ2RTpKTI16:not(._20gjC_5pJucg8Ru-nbg_Wm) {
 
 /* ─────────────────────────────────────────────────────────────────────────── */
 /*                         CONTENT PANELS                                       */
+/* 改动: 动态/好友等内容区去掉卡片底；仅主页标签行保持上游圆角底                   */
 /* ─────────────────────────────────────────────────────────────────────────── */
 
 ._27RcNu8aXKBpYkHcNNrt-X ._2aor4XVOYzN1PBSREk0UbO > .vzLedtsu3TtTlKLEKzIhH ._2r4TK4BAuU-J4FuF_O7v_5 {
+  background: unset;
+  border-radius: 0;
+}
+._27RcNu8aXKBpYkHcNNrt-X ._2aor4XVOYzN1PBSREk0UbO > .vzLedtsu3TtTlKLEKzIhH ._2r4TK4BAuU-J4FuF_O7v_5:has(._2A8NghNvAnMQQTHsudFu7H),
+._27RcNu8aXKBpYkHcNNrt-X ._2aor4XVOYzN1PBSREk0UbO > .vzLedtsu3TtTlKLEKzIhH ._2r4TK4BAuU-J4FuF_O7v_5:has(._1TGl52GwsFQg3CXUYvThP-) {
   background: color-mix(in srgb, var(--secondary-background) 90%, gray) !important;
-  border-radius: 10px;
+  border-radius: 10px !important;
 }
 ._27RcNu8aXKBpYkHcNNrt-X ._1sZgBDTw5NH-yuVDZK1SUU > .vzLedtsu3TtTlKLEKzIhH ._3yTl3RiWfo-Itg-xp967wP {
   max-width: 65%;
-  background: color-mix(in srgb, var(--secondary-background) 90%, gray);
   border-radius: 10px;
 }
 div.NarrowRightPanel ._3yTl3RiWfo-Itg-xp967wP {
   max-width: 64%;
 }
 ._1Q2q_tQ9_Eq8YdEHNAHS3F._3jY6xWI4URhFyYsanh9VKL {
-  background: color-mix(in srgb, var(--secondary-background) 90%, white) !important;
-  outline: 3px solid color-mix(in srgb, var(--secondary-background) 90%, white) !important;
-  border-radius: 10px 10px 1px 1px;
-  box-shadow: 0 3px .4em #00000061;
+  background: transparent !important; /* 改动: 去掉白底、描边和阴影 */
   margin-left: 0px;
   margin-right: 0px;
 }
 .qGJMO0uQwngYsOvMwgGWa {
-  background: color-mix(in srgb, var(--secondary-background) 90%, gray) !important;
-  border-radius: 10px;
-}
-._2r4TK4BAuU-J4FuF_O7v_5 ._3-V8vjmrwuJM6Ws3tsjFJj .Panel {
-  background-color: color-mix(in srgb, var(--secondary-background) 90%, gray) !important;
+  background: unset; /* 改动: 去掉灰色底 */
+  border-radius: 0;
 }
 
 ._5uvIN6jXDXzzck59F-nhv {
@@ -1166,7 +1183,7 @@ div.NarrowWindow ._27RcNu8aXKBpYkHcNNrt-X ._2aor4XVOYzN1PBSREk0UbO {
 
 ._2r4TK4BAuU-J4FuF_O7v_5:has(._2A8NghNvAnMQQTHsudFu7H) {
   background: color-mix(in srgb, var(--secondary-background) 90%, gray) !important;
-  border-radius: 10px;
+  border-radius: 10px !important;
 }
 
 ._2r4TK4BAuU-J4FuF_O7v_5._2PfKaNON59JOghsxPPjc0t.Panel:has(._31ptFGGMZrSQc5BCX1e5lm._2G5B7o_YoI__u11--EFjal._3KfxIwlXEvum7FCD_AM2_t.Panel > ._5uvIN6jXDXzzck59F-nhv._176QJCynkEUSdR_-9btdAW) {
@@ -1265,11 +1282,12 @@ div.NarrowWindow ._27RcNu8aXKBpYkHcNNrt-X ._2aor4XVOYzN1PBSREk0UbO {
 
 /* ─────────────────────────────────────────────────────────────────────────── */
 /*                         FRIEND SECTIONS                                      */
+/* 改动: 好友分区左对齐，不再居中                                                   */
 /* ─────────────────────────────────────────────────────────────────────────── */
 
 ._39bm0CkBxBjJsnPpAzoZlv .nTb1NqsRSnwl0UTOYn_JA {
-  text-align: center;
-  padding-bottom: 12px;
+  text-align: start;
+  padding-bottom: 2px;
   color: #c0c2c5;
 }
 ._39bm0CkBxBjJsnPpAzoZlv:nth-of-type(1) > .nTb1NqsRSnwl0UTOYn_JA {
@@ -1302,10 +1320,10 @@ div.NarrowWindow ._27RcNu8aXKBpYkHcNNrt-X ._2aor4XVOYzN1PBSREk0UbO {
   padding-top: 8px;
 }
 ._1SQ30LQnUhED7sXI79rmas {
-  text-align: center;
+  text-align: start; /* 改动: 居中改为左对齐 */
 }
 .xlk1bGKnsOI8mxsguNaXr ._1umjft7ymqKrhhjDroeBUO {
-  flex-direction: column;
+  flex-direction: row; /* 改动: 纵向改为横向 */
   overflow: unset;
 }
 ._2ycfNEAjDWvJwI6a-Wef4Q ._15tTAQr0o8mb0NcLEUOz1c {
@@ -1316,10 +1334,10 @@ div.NarrowWindow ._27RcNu8aXKBpYkHcNNrt-X ._2aor4XVOYzN1PBSREk0UbO {
   ._1umjft7ymqKrhhjDroeBUO
   ._17qc0iT2Uzbk8umX0qMOMJ
   ._3C0istohNAM4_kDuBULbcw._3gj9A13VQyuW_6wr_Io8Xz {
-  justify-content: center;
+  justify-content: flex-start; /* 改动: 居中改为靠左 */
 }
 ._5uvIN6jXDXzzck59F-nhv ._39bm0CkBxBjJsnPpAzoZlv ._1umjft7ymqKrhhjDroeBUO {
-  justify-content: center;
+  justify-content: flex-start; /* 改动: 居中改为靠左 */
 }
 
 .vzLedtsu3TtTlKLEKzIhH ._3yTl3RiWfo-Itg-xp967wP._1_lVh3JvHLiurz1OuvfGhm {
@@ -1340,7 +1358,8 @@ div.NarrowWindow ._27RcNu8aXKBpYkHcNNrt-X ._2aor4XVOYzN1PBSREk0UbO {
 /*                         SHOWCASE LAYOUT                                      */
 /* ─────────────────────────────────────────────────────────────────────────── */
 
-.ddB5GVHCwLezhshXUMCNL {
+/* 改动: 关掉上游展柜居中布局 */
+/* .ddB5GVHCwLezhshXUMCNL {
   margin-left: auto;
   margin-right: auto;
   top: 12px;
@@ -1350,21 +1369,20 @@ div.NarrowWindow ._27RcNu8aXKBpYkHcNNrt-X ._2aor4XVOYzN1PBSREk0UbO {
   width: unset;
   height: 184px;
   padding-right: unset;
-}
+} */
 ._3dJ4Bq6Msivz5-UIHzSEQu .ElNfQSVSKeMaOVHygQ4Nh {
   display: none;
 }
-._3dJ4Bq6Msivz5-UIHzSEQu {
+/* 改动: 关掉上游展柜垂直居中 */
+/* ._3dJ4Bq6Msivz5-UIHzSEQu {
   padding: 40px 0px 0px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
   max-height: 130px;
-}
+} */
 .VytJzt3Z_t6332-n24Yrc {
-  min-width: 290px;
-  max-width: 400px;
-  border-radius: 6px;
+  border-radius: 6px; /* 改动: 去掉最小/最大宽度限制 */
 }
 
 /* ─────────────────────────────────────────────────────────────────────────── */
@@ -1372,12 +1390,8 @@ div.NarrowWindow ._27RcNu8aXKBpYkHcNNrt-X ._2aor4XVOYzN1PBSREk0UbO {
 /* ─────────────────────────────────────────────────────────────────────────── */
 
 ._2gv3EsHSu5dMQyMqaz-W9t {
-  display: block;
-  background: color-mix(in srgb, var(--secondary-background) 90%, white) !important;
   width: 750px;
-  border-radius: 10px;
-  outline: 1px solid color-mix(in srgb, var(--secondary-background) 80%, gray) !important;
-  box-shadow: 0px 0em 4px 0px #00000099;
+  border-radius: 10px; /* 改动: 去掉展柜卡片底、描边和阴影 */
 }
 ._2gv3EsHSu5dMQyMqaz-W9t:hover {
   background: color-mix(in srgb, var(--secondary-background) 85%, white) !important;
@@ -1398,8 +1412,7 @@ div.NarrowWindow ._27RcNu8aXKBpYkHcNNrt-X ._2aor4XVOYzN1PBSREk0UbO {
 /* ─────────────────────────────────────────────────────────────────────────── */
 
 ._1HZy7BvOZuPT8feUwadL4W {
-  border-radius: 10px;
-  width: 78%;
+  border-radius: 10px; /* 改动: 去掉 78% 宽度和左右自动边距 */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1407,8 +1420,6 @@ div.NarrowWindow ._27RcNu8aXKBpYkHcNNrt-X ._2aor4XVOYzN1PBSREk0UbO {
   transition-property: unset;
   transition-duration: unset;
   transition-timing-function: unset;
-  margin-left: auto;
-  margin-right: auto;
 }
 ._1AYE16384J_ecLpN0sEYc5 {
   border: unset;
@@ -1425,9 +1436,10 @@ div.NarrowWindow ._27RcNu8aXKBpYkHcNNrt-X ._2aor4XVOYzN1PBSREk0UbO {
 .UVeN0kaD3zv1feMj_mMw5.By7D93oEZkZtBeg23NDoR._3xi-HLpFVHaakihoqhQ_6C {
   background: unset;
 }
-._1AYE16384J_ecLpN0sEYc5:last-child {
+/* 改动: 关掉最后一项额外上下内边距 */
+/* ._1AYE16384J_ecLpN0sEYc5:last-child {
   padding: 16px 0 16px 0;
-}
+} */
 
 /* ─────────────────────────────────────────────────────────────────────────── */
 /*                         SHOWCASE LABELS                                      */
@@ -1506,17 +1518,14 @@ html:has([class*="_5uvIN6jXDXzzck59F-nhv"]):has([class*="_1TGl52GwsFQg3CXUYvThP-
 
 /* ─────────────────────────────────────────────────────────────────────────── */
 /*                         SECTION HEADERS                                      */
+/* 改动: 关掉上游居中的分区标题装饰条                                               */
 /* ─────────────────────────────────────────────────────────────────────────── */
 
-.S2Fu9HxHCA5MaCLGrN2ib ._19LfMT7PFWg2xHOqNjR99q {
+/* .S2Fu9HxHCA5MaCLGrN2ib ._19LfMT7PFWg2xHOqNjR99q {
   color: #afaeaecf;
   justify-content: center;
-  /* border-top: 2px solid; */
   margin-top: 4px;
-  /* border-right: 2px solid; */
-  /* border-left: 2px solid; */
   border-radius: 10px 10px 0px 0px;
-  /* border-color: #9aa1ab38; */
   padding-top: 4px;
   width: 38%;
   margin-left: auto;
@@ -1539,7 +1548,7 @@ html:has([class*="_5uvIN6jXDXzzck59F-nhv"]):has([class*="_1TGl52GwsFQg3CXUYvThP-
   margin-top: 28px;
   margin-left: unset;
   box-shadow: 0px 3px 8px 0px #00000070;
-}
+} */
 button.TextButton._34gmVq6C3FNtdHqDLa3-XR {
   display: block;
   margin-right: auto;
@@ -1564,8 +1573,7 @@ button.TextButton._34gmVq6C3FNtdHqDLa3-XR {
 /* ─────────────────────────────────────────────────────────────────────────── */
 
 .yJLy7HDLJT44C1fcm6lPI {
-  padding: unset;
-  justify-content: center;
+  padding: unset; /* 改动: 成就列表不再水平居中 */
 }
 .UVeN0kaD3zv1feMj_mMw5 .NEMXhMlqXOCJwfgWlHXhT {
   background: unset;
@@ -1581,12 +1589,8 @@ button.TextButton._34gmVq6C3FNtdHqDLa3-XR {
 /* ─────────────────────────────────────────────────────────────────────────── */
 
 ._1j_gja8bHXjiS-BeSQk8hb {
-  padding: 12px;
-  background: color-mix(in srgb, var(--secondary-background) 90%, white) !important;
-  outline: 1px solid color-mix(in srgb, var(--secondary-background) 80%, gray) !important;
-  box-shadow: 0px 0em 4px 0px #00000099;
-  border-radius: 8px;
-  border: unset;
+  background: unset; /* 改动: 去掉成就卡片底、描边和阴影 */
+  border-radius: 0;
 }
 ._2gISWIeEzZ9PNuAzVuMaWd,
 ._1ABm6sfuqiZZDSL9z8mW1a,
@@ -1597,9 +1601,7 @@ button.TextButton._34gmVq6C3FNtdHqDLa3-XR {
 
 /* Special Achievement Highlighting */
 ._1j_gja8bHXjiS-BeSQk8hb:has(._2V2sHETNfa62yMoDwSF3_t._3s4Rq3jnntBVP7HbJj1RMQ) {
-  background: #ffb84e26 !important;
-  box-shadow: 0px 0px 0px 0px rgb(255 184 78 / 58%), 0px 0px 16px 1px rgb(255 184 78 / 14%) !important;
-  /* border: solid #ffb84e26 2px; */
+  background: #ffb84e26 !important; /* 改动: 稀有成就只留底色，去掉光晕 */
 }
 ._2D_EJk8-jCnfqiwoKkOMVh {
   display: none;
@@ -1609,12 +1611,8 @@ button.TextButton._34gmVq6C3FNtdHqDLa3-XR {
   margin-bottom: 16px;
 }
 ._38t1mljBjmJfqjpVzMT1CG {
-  background: color-mix(in srgb, var(--secondary-background) 90%, white) !important;
-  margin-top: 16px;
-  border-radius: 8px;
-  margin-right: auto;
-  margin-left: auto;
-  width: 90%;
+  margin-top: 8px; /* 改动: 去掉成就区块灰底和居中宽度 */
+  border-radius: 2px;
 }
 ._2YS0EBJmY2Rvs07zZ90UIJ svg {
   display: none;

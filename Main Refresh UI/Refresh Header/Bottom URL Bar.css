@@ -7,16 +7,25 @@
     padding: 8px 4px 8px 9px;
     background: var(--main-background);
     box-shadow: unset;
+    display: flex;
+    align-items: center;
+    gap: 4px; /* 改动: 前进/后退/刷新同一行对齐 */
 }
 /*Change Refresh Style Button*/
 ._1bGewp3tfzqAF6fVTFFUOz .UkR3sY319PuaUNuUWks2K ._3KaB94Jl4r0hFkthDPJy09 {
-	padding: 2px 0px 3px 4px;
+	padding: 4px !important;
     background: rgba(103, 112, 123, .2);
 	border-radius: 4px;
-	margin-left: 4px;
-}
-._1bGewp3tfzqAF6fVTFFUOz .UkR3sY319PuaUNuUWks2K svg {
-    margin-top: 1px;
+	margin-left: 0;
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    min-height: 16px;
+    box-sizing: content-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 ._1bGewp3tfzqAF6fVTFFUOz .UkR3sY319PuaUNuUWks2K ._3KaB94Jl4r0hFkthDPJy09:hover {
     background: #6363632e;
@@ -28,29 +37,49 @@
 /*Change URL Style Bar*/
 ._1bGewp3tfzqAF6fVTFFUOz .UkR3sY319PuaUNuUWks2K ._2m_orETo6AghzAnc0sISCt {
 	border-radius: 4px !important;
-    margin-left: 6px !important;
+    margin-left: 2px !important;
 	padding: 3px 16px 2px 8px;
 }
 ._1bGewp3tfzqAF6fVTFFUOz .UkR3sY319PuaUNuUWks2K ._2m_orETo6AghzAnc0sISCt:hover {
 	border-radius: 4px !important;
     background: #6363632e;
 }
-/*Position Page Arrows*/
-._25lBLzuVeYAUG279up4xP8:first-child {
-    position: fixed;
-    right: 44px;
-	padding: 6px 8px 6px 8px !important;
-	transform: scale(-0.80, 0.80) !important;
-}
-._25lBLzuVeYAUG279up4xP8 {
-    position: fixed;
-	bottom: 5.5px;
-    right: 12px;
-    z-index: 1;
-	transform: scale(0.80, 0.80) !important;
-	padding: 6px 8px 6px 8px !important;
+/* 改动: 前进/后退搬进地址栏后，与刷新同一尺寸对齐 */
+._1bGewp3tfzqAF6fVTFFUOz .UkR3sY319PuaUNuUWks2K ._25lBLzuVeYAUG279up4xP8 {
+    position: static;
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    z-index: auto;
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    min-height: 16px;
+    padding: 4px !important;
+    margin: 0;
+    transform: none;
     background: rgba(103, 112, 123, .2);
     border-radius: 4px;
+    box-sizing: content-box;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+._1bGewp3tfzqAF6fVTFFUOz .UkR3sY319PuaUNuUWks2K ._25lBLzuVeYAUG279up4xP8:first-of-type {
+    transform: scaleX(-1);
+}
+._1bGewp3tfzqAF6fVTFFUOz .UkR3sY319PuaUNuUWks2K ._25lBLzuVeYAUG279up4xP8:hover,
+._1bGewp3tfzqAF6fVTFFUOz .UkR3sY319PuaUNuUWks2K ._3KaB94Jl4r0hFkthDPJy09:hover {
+    background: #6363632e;
+}
+._1bGewp3tfzqAF6fVTFFUOz .UkR3sY319PuaUNuUWks2K ._25lBLzuVeYAUG279up4xP8 svg,
+._1bGewp3tfzqAF6fVTFFUOz .UkR3sY319PuaUNuUWks2K ._3KaB94Jl4r0hFkthDPJy09 svg {
+    margin: 0;
+    padding: 0;
+    width: 16px;
+    height: 16px;
 }
 /*Stupid Fix for Arrows | I hope it's not broke anything*/
 .RGNMWtyj73_-WdhflrmuY {

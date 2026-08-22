@@ -14,6 +14,13 @@
 ._2UyOBeiSdBayaFdRa39N2O:nth-of-type(5)  {
     display: none !important;
 }
+/* 改动: 顶栏前进/后退默认隐藏，启动和库存页不要出现在 STEAM / 库 旁边 */
+._25lBLzuVeYAUG279up4xP8 {
+    display: none !important;
+}
+html.nevko-web-nav ._1bGewp3tfzqAF6fVTFFUOz .UkR3sY319PuaUNuUWks2K ._25lBLzuVeYAUG279up4xP8 {
+    display: flex !important;
+}
 /*Remove Useless Height*/
 .RGNMWtyj73_-WdhflrmuY ._2CmrnGY-Amtd83ScJkFvx2 {
     min-height: unset !important;
@@ -376,8 +383,9 @@
 }
 
 /* Change Color Balance */
+/* 改动: 顶栏余额文字改为白色，不再用 #81878F */
 ._3yD46y5pd3zOGR7CzKs0mC ._2jphjrSifC6orDT4g_7Wd {
-    color: #81878F;
+    color: white;
 }
 
 

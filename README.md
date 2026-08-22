@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://github.com/dotFelixan/NEVKO-UI/">
+    <a href="#">
         <picture>
           <img src="github/logo/newnevkologo.png?raw=true" alt="nevkouilogo" width="200">
         </picture>
@@ -8,8 +8,8 @@
 
 <div align="center">
 
-# NEVKO-UI
-### Theme for Millennium for Steam
+# NEVKO Simplified
+### Simplified NEVKO-UI for Millennium / Steam
 
 (Still Heavy WIP, Things may change.)
 

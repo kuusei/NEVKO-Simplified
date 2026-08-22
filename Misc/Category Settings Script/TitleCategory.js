@@ -11,12 +11,12 @@ const CONFIG = {
   // Format: "Search text": "New text"
   // ============================================
   replacements: {
-    "DRIVER = 1": "Users",
-    "DRIVER = 2": "Misc",
-    "DRIVER = 3": "Main",
-    "DRIVER = 4": "Library",
-    "DRIVER = 5": "Chats",
-    "DRIVER = 6": "Misc",
+    "DRIVER = 1": "用户",
+    "DRIVER = 2": "其他",
+    "DRIVER = 3": "主界面",
+    "DRIVER = 4": "库存",
+    "DRIVER = 5": "聊天",
+    "DRIVER = 6": "其他",
     // Добавьте свои замены ниже / Add your replacements below:
     // "DRIVER = *": "Custom",
   },

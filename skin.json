@@ -1,15 +1,12 @@
 {
-  "name": "NEVKO-UI",
+  "name": "NEVKO Simplified",
   "version": "0.9.900",
-  "description": "Refresh Design for Steam.",
-  "author": "dotFelixan",
+  "description": "Steam 刷新风格主题。简化版。",
+  "author": ".Felixan&kuusei",
 
   "github": {
-    "owner": "dotFelixan",
-    "repo_name": "NEVKO-UI"
-  },
-  "discord_support": {
-    "inviteCodeExcludingLink": "UuAQWZ9HxE"
+    "owner": "kuusei",
+    "repo_name": "NEVKO-Simplified"
   },
 
   "header_image": "https://i.imgur.com/2aRCvrt.png",
@@ -24,29 +21,29 @@
     "DRIVER = 1": {
       "description": "",
       "default": "",
-      "tab": "General",
+      "tab": "通用",
       "values": {
         "": {}
       }
     },
-    "Rounding Avatars": {
-      "description": "Choose the shape style for all user avatars throughout Steam",
-      "default": "Rounded Square",
-      "tab": "General",
+    "头像圆角": {
+      "description": "三种头像圆角预设",
+      "default": "圆角方形",
+      "tab": "通用",
       "values": {
-        "Sharp": {
+        "直角": {
           "TargetCss": {
             "affects": [".*"],
             "src": "General/Rounding Avatars/Sharp.css"
           }
         },
-        "Rounded Square": {
+        "圆角方形": {
           "TargetCss": {
             "affects": [".*"],
             "src": "General/Rounding Avatars/Rounded Square.css"
           }
         },
-        "Circle": {
+        "圆形": {
           "TargetCss": {
             "affects": [".*"],
             "src": "General/Rounding Avatars/Circle.css"
@@ -54,13 +51,13 @@
         }
       }
     },
-    "Alternative Online Indicator": {
-      "description": "Replaces default indicator with a modern dot-style badge (like Discord)",
-      "default": "yes",
-      "tab": "General",
+    "替代在线指示器": {
+      "description": "类似 Discord 的点状在线状态指示器",
+      "default": "否",
+      "tab": "通用",
       "values": {
-        "no": {},
-        "yes": {
+        "否": {},
+        "是": {
           "TargetCss": {
             "affects": [".*"],
             "src": "General/ALT Online Indicator/Status Indicator.css"
@@ -68,13 +65,13 @@
         }
       }
     },
-    "Avatar Decoration": {
-      "description": "Toggle visibility of avatar frames | BIG WIP, UNSTABLE",
-      "default": "no",
-      "tab": "General",
+    "头像装饰": {
+      "description": "切换头像框显示 | 开发中，不稳定",
+      "default": "否",
+      "tab": "通用",
       "values": {
-        "no": {},
-        "yes": {
+        "否": {},
+        "是": {
           "TargetJs": {
             "affects": [".*"],
             "src": "General/Hide Decoration/HAD.js"
@@ -86,31 +83,31 @@
     "DRIVER = 2": {
       "description": "",
       "default": "",
-      "tab": "General",
+      "tab": "通用",
       "values": {
         "": {}
       }
     },
-    "Badges for Contributors": {
-      "description": "Display special badges for theme contributors on their profiles | Can't be disabled, WIP",
-      "default": "yes",
-      "tab": "General",
+    "贡献者徽章": {
+      "description": "在个人资料上显示主题贡献者徽章 | 无法关闭，开发中",
+      "default": "是",
+      "tab": "通用",
       "values": {
-        "no": {
+        "否": {
           "TargetCss": {
             "affects": ["http.*steamcommunity.*(id|profiles).[^\\/]+\\/?$"],
             "src": "General/Badges for Contributors/Badges.css"
           }
         },
-        "yes": {}
+        "是": {}
       }
     },
-    "Fonts [WIP]": {
-      "description": "Override the default Steam font with a custom typeface | BIG WIP, NOT WORK",
-      "default": "Steam Default",
-      "tab": "General",
+    "字体 [未完成]": {
+      "description": "用自定义字体覆盖 Steam 默认字体 | 开发中，暂不可用",
+      "default": "Steam 默认",
+      "tab": "通用",
       "values": {
-        "Steam Default": {},
+        "Steam 默认": {},
         "Inter": {
           "TargetCss": {
             "affects": [".*"],
@@ -129,18 +126,18 @@
     "DRIVER = 3": {
       "description": "",
       "default": "",
-      "tab": "UI Personalization",
+      "tab": "界面个性化",
       "values": {
         "": {}
       }
     },
-    "Reorder Main Buttons": {
-      "description": "Swap the positions of 'Store' and 'Library' buttons in the header",
-      "default": "yes",
-      "tab": "UI Personalization",
+    "交换主按钮顺序": {
+      "description": "交换顶栏「商店」和「库存」按钮",
+      "default": "否",
+      "tab": "界面个性化",
       "values": {
-        "no": {},
-        "yes": {
+        "否": {},
+        "是": {
           "TargetCss": {
             "affects": ["^Steam$"],
             "src": "Main Refresh UI/Refresh Header/Reorder Buttons.css"
@@ -148,13 +145,13 @@
         }
       }
     },
-    "Hide Profile Button": {
-      "description": "Remove the profile button from the left side | Useful buttons are moved to Account Menu",
-      "default": "yes",
-      "tab": "UI Personalization",
+    "隐藏个人资料按钮": {
+      "description": "移除左侧个人资料按钮，相关功能移入账户菜单",
+      "default": "是",
+      "tab": "界面个性化",
       "values": {
-        "no": {},
-        "yes": {
+        "否": {},
+        "是": {
           "TargetCss": {
             "affects": ["^Steam$", "Menu$", "SuperNav$"],
             "src": "Main Refresh UI/Refresh Header/Compact Profile Button/Hide Profile Button.css"
@@ -166,49 +163,49 @@
         }
       }
     },
-    "Remove Window Buttons": {
-      "description": "Hide specific window control buttons",
-      "default": "None",
-      "tab": "UI Personalization",
+    "隐藏窗口按钮": {
+      "description": "隐藏指定窗口控制按钮",
+      "default": "无",
+      "tab": "界面个性化",
       "values": {
-        "None": {},
-        "[Collapse] Only": {
+        "无": {},
+        "仅隐藏 [最小化]": {
           "TargetCss": {
             "affects": ["^Steam$"],
             "src": "Main Refresh UI/Refresh Header/Main Window Buttons/collapse-o.css"
           }
         },
-        "[Expand] Only": {
+        "仅隐藏 [最大化]": {
           "TargetCss": {
             "affects": ["^Steam$"],
             "src": "Main Refresh UI/Refresh Header/Main Window Buttons/expand-o.css"
           }
         },
-        "[Close] Only": {
+        "仅隐藏 [关闭]": {
           "TargetCss": {
             "affects": ["^Steam$"],
             "src": "Main Refresh UI/Refresh Header/Main Window Buttons/close-o.css"
           }
         },
-        "[Collapse + Expand]": {
+        "[最小化 + 最大化]": {
           "TargetCss": {
             "affects": ["^Steam$"],
             "src": "Main Refresh UI/Refresh Header/Main Window Buttons/collapse-expand.css"
           }
         },
-        "[Collapse + Close]": {
+        "[最小化 + 关闭]": {
           "TargetCss": {
             "affects": ["^Steam$"],
             "src": "Main Refresh UI/Refresh Header/Main Window Buttons/collapse-close.css"
           }
         },
-        "[Expand + Close]": {
+        "[最大化 + 关闭]": {
           "TargetCss": {
             "affects": ["^Steam$"],
             "src": "Main Refresh UI/Refresh Header/Main Window Buttons/expand-close.css"
           }
         },
-        "All": {
+        "全部": {
           "TargetCss": {
             "affects": ["^Steam$"],
             "src": "Main Refresh UI/Refresh Header/Main Window Buttons/hide all.css"
@@ -216,18 +213,18 @@
         }
       }
     },
-    "Move Bottom Buttons to Top Bar": {
-      "description": "",
-      "default": "yes",
-      "tab": "UI Personalization",
+    "底栏按钮移到顶栏": {
+      "description": "同时移除底栏",
+      "default": "是",
+      "tab": "界面个性化",
       "values": {
-        "no": {
+        "否": {
           "TargetCss": {
             "affects": ["^Steam$"],
             "src": "Main Refresh UI/Refresh Header/Fancy Bottom.css"
           }
         },
-        "yes": {
+        "是": {
           "TargetCss": {
             "affects": ["^Steam$"],
             "src": "Main Refresh UI/Refresh Header/Compact Buttons/Compact Buttons.css"
@@ -239,18 +236,18 @@
         }
       }
     },
-    "Move URL Bar to Bottom": {
-      "description": "Position the URL/address bar at the bottom of the window",
-      "default": "yes",
-      "tab": "UI Personalization",
+    "地址栏移到底部": {
+      "description": "将地址栏移到底部",
+      "default": "是",
+      "tab": "界面个性化",
       "values": {
-        "no": {
+        "否": {
           "TargetCss": {
             "affects": ["^Steam$"],
             "src": "Main Refresh UI/Refresh Header/Top URL Bar.css"
           }
         },
-        "yes": {
+        "是": {
           "TargetCss": {
             "affects": ["^Steam$"],
             "src": "Main Refresh UI/Refresh Header/Bottom URL Bar.css"
@@ -262,21 +259,21 @@
     "DRIVER = 4": {
       "description": "",
       "default": "",
-      "tab": "UI Personalization",
+      "tab": "界面个性化",
       "values": {
         "": {}
       }
     },
-    "Library Side": {
-      "description": "Choose which side of the screen to display the game library list",
-      "default": "Left Side",
-      "tab": "UI Personalization",
+    "库存列表位置": {
+      "description": "选择游戏库存列表显示在屏幕哪一侧",
+      "default": "左侧",
+      "tab": "界面个性化",
       "values": {
-        "Left Side": {
+        "左侧": {
           "affects": ["^Steam$"],
           "src": "Main Refresh UI/Refresh Library/Flip Sides/Fix Button Flip Gamepage.css"
         },
-        "Right Side": {
+        "右侧": {
           "TargetCss": {
             "affects": ["^Steam$"],
             "src": "Main Refresh UI/Refresh Library/Flip Sides/Flip Library.css"
@@ -284,13 +281,13 @@
         }
       }
     },
-    "Gamepage Side": {
-      "description": "Choose which side to display game details and information panel",
-      "default": "Left Side",
-      "tab": "UI Personalization",
+    "游戏页位置": {
+      "description": "选择游戏详情面板显示在哪一侧",
+      "default": "左侧",
+      "tab": "界面个性化",
       "values": {
-        "Left Side": {},
-        "Right Side": {
+        "左侧": {},
+        "右侧": {
           "TargetCss": {
             "affects": ["^Steam$"],
             "src": "Main Refresh UI/Refresh Library/Flip Sides/Flip Gamepage.css"
@@ -298,30 +295,30 @@
         }
       }
     },
-    "Resize Library List": {
-      "description": "Adjust the width of the game library sidebar",
-      "default": "Default",
-      "tab": "UI Personalization",
+    "库存列表大小": {
+      "description": "调整库存侧栏宽度",
+      "default": "默认",
+      "tab": "界面个性化",
       "values": {
-        "Small": {
+        "小": {
           "TargetCss": {
             "affects": ["^Steam$"],
             "src": "Main Refresh UI/Refresh Library/Library Sizes/Small.css"
           }
         },
-        "Default": {
+        "默认": {
           "TargetCss": {
             "affects": ["^Steam$"],
             "src": "Main Refresh UI/Refresh Library/Library Sizes/Default.css"
           }
         },
-        "Medium": {
+        "中": {
           "TargetCss": {
             "affects": ["^Steam$"],
             "src": "Main Refresh UI/Refresh Library/Library Sizes/Medium.css"
           }
         },
-        "Big": {
+        "大": {
           "TargetCss": {
             "affects": ["^Steam$"],
             "src": "Main Refresh UI/Refresh Library/Library Sizes/Big.css"
@@ -329,43 +326,43 @@
         }
       }
     },
-    "Game Page Content Location": {
+    "游戏页内容位置": {
       "description": "",
-      "default": "Center [All]",
-      "tab": "UI Personalization",
+      "default": "居中 [全部]",
+      "tab": "界面个性化",
       "values": {
-        "[All] Center": {},
-        "[All] Left Side": {
+        "居中 [全部]": {},
+        "左侧 [全部]": {
           "TargetCss": {
             "affects": ["^Steam$"],
             "src": "Main Refresh UI/Refresh Library/Game Buttons Location/leftside-all.css"
           }
         },
-        "[All] Right Side": {
+        "右侧 [全部]": {
           "TargetCss": {
             "affects": ["^Steam$"],
             "src": "Main Refresh UI/Refresh Library/Game Buttons Location/rightside-all.css"
           }
         },
-        "[Game Links] Right Side Only": {
+        "仅右侧 [游戏链接]": {
           "TargetCss": {
             "affects": ["^Steam$"],
             "src": "Main Refresh UI/Refresh Library/Game Buttons Location/rightside-links.css"
           }
         },
-        "[Game Links] Left Side Only": {
+        "仅左侧 [游戏链接]": {
           "TargetCss": {
             "affects": ["^Steam$"],
             "src": "Main Refresh UI/Refresh Library/Game Buttons Location/leftside-links.css"
           }
         },
-        "[Compact] Left Side": {
+        "紧凑左侧": {
           "TargetCss": {
             "affects": ["^Steam$"],
             "src": "Main Refresh UI/Refresh Library/Game Buttons Location/compact-left.css"
           }
         },
-        "[Compact] Right Side": {
+        "紧凑右侧": {
           "TargetCss": {
             "affects": ["^Steam$"],
             "src": "Main Refresh UI/Refresh Library/Game Buttons Location/compact-right.css"
@@ -373,25 +370,25 @@
         }
       }
     },
-    "Hiding Library Items": {
-      "description": "Hide specific elements from the library home screen",
-      "default": "None",
-      "tab": "UI Personalization",
+    "隐藏库存项目": {
+      "description": "隐藏库存主页上的指定元素",
+      "default": "无",
+      "tab": "界面个性化",
       "values": {
-        "None": {},
-        "[What's New] Only": {
+        "无": {},
+        "仅隐藏 [新鲜出炉]": {
           "TargetCss": {
             "affects": ["^Steam$"],
             "src": "Main Refresh UI/Refresh Library/Hide Library Items/News.css"
           }
         },
-        "[Add Shelf] Only": {
+        "仅隐藏 [添加货架]": {
           "TargetCss": {
             "affects": ["^Steam$"],
             "src": "Main Refresh UI/Refresh Library/Hide Library Items/Shelf.css"
           }
         },
-        "Both": {
+        "两者都隐藏": {
           "TargetCss": {
             "affects": ["^Steam$"],
             "src": "Main Refresh UI/Refresh Library/Hide Library Items/Both.css"
@@ -403,18 +400,18 @@
     "DRIVER = 5": {
       "description": "",
       "default": "",
-      "tab": "UI Personalization",
+      "tab": "界面个性化",
       "values": {
         "": {}
       }
     },
-    "Refresh Friends & Chat": {
-      "description": "Apply a refreshed modern design to the Friends & Chat panel | BIG WIP",
-      "default": "Disabled",
-      "tab": "UI Personalization",
+    "刷新好友与聊天": {
+      "description": "为好友与聊天面板应用刷新风格 | 开发中",
+      "default": "禁用",
+      "tab": "界面个性化",
       "values": {
-        "Disabled": {},
-        "Enabled": {
+        "禁用": {},
+        "启用": {
           "TargetCss": {
             "affects": [".friendsui-container"],
             "src": "Main Refresh UI/Refresh Chats/Chats Code.css"
@@ -422,19 +419,19 @@
         }
       }
     },
-    "Style Menu": {
-      "description": "Choose the visual density style for dropdown menus",
-      "default": "Spacious",
-      "tab": "UI Personalization",
+    "菜单样式": {
+      "description": "选择下拉菜单的视觉密度",
+      "default": "宽松",
+      "tab": "界面个性化",
       "values": {
-        "Legacy": {},
-        "Spacious": {
+        "传统": {},
+        "宽松": {
           "TargetCss": {
             "affects": ["^Steam$", ".friendsui-container", "Supernav$", "Menu$"],
             "src": "Main Refresh UI/Refresh Menu/Spacious.css"
           }
         },
-        "Compact": {
+        "紧凑": {
           "TargetCss": {
             "affects": ["^Steam$", ".friendsui-container", "Supernav$", "Menu$"],
             "src": "Main Refresh UI/Refresh Menu/Compact.css"
@@ -443,23 +440,23 @@
       }
     },
 
-    "Refresh Settings": {
-      "description": "Enable experimental redesigned settings interface | BIG WIP",
-      "default": "Disabled",
-      "tab": "Refresh Presets",
+    "刷新设置": {
+      "description": "启用实验性重设计设置界面 | 开发中",
+      "default": "禁用",
+      "tab": "刷新预设",
       "values": {
-        "Disabled": {},
-        "Enabled": {}
+        "禁用": {},
+        "启用": {}
       }
     },
 
-    "Blur Account Name": {
-      "description": "Apply blur effect to your account/login name in the Account Menu",
-      "default": "no",
-      "tab": "Privacy",
+    "模糊账户名": {
+      "description": "模糊账户菜单中的账户/登录名",
+      "default": "是",
+      "tab": "隐私",
       "values": {
-        "no": {},
-        "yes": {
+        "否": {},
+        "是": {
           "TargetCss": {
             "affects": ["Menu$", "SuperNav$"],
             "src": "Extra/Privacy/Bluring/Login Account.css"
@@ -467,13 +464,13 @@
         }
       }
     },
-    "Blur Balance": {
-      "description": "Apply blur effect to your wallet balance in the Account Menu",
-      "default": "no",
-      "tab": "Privacy",
+    "模糊余额": {
+      "description": "模糊账户菜单中的钱包余额",
+      "default": "否",
+      "tab": "隐私",
       "values": {
-        "no": {},
-        "yes": {
+        "否": {},
+        "是": {
           "TargetCss": {
             "affects": ["Menu$", "SuperNav$"],
             "src": "Extra/Privacy/Bluring/Balance in Menu.css"
@@ -481,13 +478,13 @@
         }
       }
     },
-    "Hide Balance": {
-      "description": "Completely hide your wallet balance from the account button",
-      "default": "yes",
-      "tab": "Privacy",
+    "隐藏余额": {
+      "description": "完全隐藏账户按钮中的钱包余额",
+      "default": "是",
+      "tab": "隐私",
       "values": {
-        "no": {},
-        "yes": {
+        "否": {},
+        "是": {
           "TargetCss": {
             "affects": ["^Steam$"],
             "src": "Extra/Privacy/Hide/Account Balance.css"
