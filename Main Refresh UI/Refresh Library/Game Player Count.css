@@ -1,0 +1,66 @@
+/* 改动: 实验性游戏在线人数仅在设置开启时请求并展示 */
+:root {
+    --nevko-game-player-count-enabled: 1;
+}
+
+/* 改动: 小标签锚定原启动按钮上方，跟随布局移动，不挤占按钮或右上信息栏 */
+._1FnJ6dPuknQFQ2RTpKTI16 > .nevko-game-player-count {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 0;
+    z-index: 5;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    width: max-content;
+    max-width: 240px;
+    height: 26px;
+    box-sizing: border-box;
+    padding: 0 9px;
+    margin: 0;
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 6px;
+    background: rgba(24, 29, 34, .82);
+    backdrop-filter: blur(8px);
+    color: #BCC3CC;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    font-family: inherit;
+    white-space: nowrap;
+    cursor: pointer;
+    -webkit-app-region: no-drag;
+}
+/* 改动: 当前人数及圆点用绿色，加载或失败时保持中性灰色 */
+.nevko-player-dot {
+    width: 6px;
+    height: 6px;
+    flex: none;
+    border-radius: 50%;
+    background: #8B929A;
+}
+.nevko-game-player-count[data-state="ready"] .nevko-player-dot {
+    background: #8BC53F;
+}
+.nevko-game-player-count[data-state="ready"] .nevko-player-value {
+    color: #8BC53F;
+    font-variant-numeric: tabular-nums;
+}
+.nevko-game-player-count:hover {
+    background: rgba(42, 49, 58, .94);
+    border-color: rgba(255, 255, 255, .25);
+}
+.nevko-game-player-count:focus-visible {
+    outline: 2px solid var(--accent, #1A9FFF);
+    outline-offset: 2px;
+}
+
+/* 改动: 悬停浮层复用 Steam 原生提示框样式，替代浏览器 title 长条，并允许分行及窗口边缘避让 */
+._2FxbHJzYoH024ko7zqcJOf.nevko-game-player-tooltip {
+    position: fixed;
+    z-index: 10000;
+    pointer-events: none !important;
+    max-width: min(300px, calc(100vw - 16px));
+    white-space: pre-line !important;
+    line-height: 1.5;
+}

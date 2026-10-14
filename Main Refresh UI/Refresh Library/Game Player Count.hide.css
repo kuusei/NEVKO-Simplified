@@ -1,0 +1,8 @@
+/* 改动: 关闭实验性在线人数时停止查询并隐藏已插入的标签 */
+:root {
+    --nevko-game-player-count-enabled: 0 !important;
+}
+.nevko-game-player-count,
+.nevko-game-player-tooltip {
+    display: none !important;
+}

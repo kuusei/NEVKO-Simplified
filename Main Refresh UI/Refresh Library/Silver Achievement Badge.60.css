@@ -1,0 +1,4 @@
+/* 改动: 银色成就奖章使用 60%（含）的精确门槛，由全成就标记开关控制是否生效 */
+:root {
+  --nevko-silver-achievement-threshold: 60;
+}

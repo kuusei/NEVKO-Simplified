@@ -25,13 +25,16 @@
 }
 ._3vCzSrrXZzZjVJFZNg9SGu {
     width: fit-content !important;
+    /* 改动: 新版多个隐藏提示面板仍会撑宽父容器，按钮组靠右对齐，消除好友与通知之间的内部留白。 */
+    align-self: flex-end !important;
     box-shadow: none !important;
     background: none !important;
 	-webkit-app-region: no-drag;
     gap: 5px !important;
     flex: 0 !important;
 }
-._1_yS5UP7el0aN4vntx3dx > div:first-of-type {
+/* 改动: 首元素居中规则排除按钮组，避免 Steam 不渲染前置面板时整组按钮被左移一半宽度。 */
+._1_yS5UP7el0aN4vntx3dx > div:first-of-type:not(._3vCzSrrXZzZjVJFZNg9SGu) {
 	transform: translateX(-50%);
     position: fixed;
     width: 700px;

@@ -7,11 +7,11 @@
 }
 
 	/* Remove Elements */
-/*Context Profile Button*/
-._2UyOBeiSdBayaFdRa39N2O:nth-of-type(2),
-._2UyOBeiSdBayaFdRa39N2O:nth-of-type(3),
-._2UyOBeiSdBayaFdRa39N2O:nth-of-type(4),
-._2UyOBeiSdBayaFdRa39N2O:nth-of-type(5)  {
+/* 改动: 只藏 STEAM 旁多余按钮，避免误伤库存/商店下拉里的截图等项 */
+._1Ky59qmywxOUtNcI1cgmkX ._2UyOBeiSdBayaFdRa39N2O:nth-of-type(2),
+._1Ky59qmywxOUtNcI1cgmkX ._2UyOBeiSdBayaFdRa39N2O:nth-of-type(3),
+._1Ky59qmywxOUtNcI1cgmkX ._2UyOBeiSdBayaFdRa39N2O:nth-of-type(4),
+._1Ky59qmywxOUtNcI1cgmkX ._2UyOBeiSdBayaFdRa39N2O:nth-of-type(5)  {
     display: none !important;
 }
 /* 改动: 顶栏前进/后退默认隐藏，启动和库存页不要出现在 STEAM / 库 旁边 */
@@ -167,9 +167,81 @@ html.nevko-web-nav ._1bGewp3tfzqAF6fVTFFUOz .UkR3sY319PuaUNuUWks2K ._25lBLzuVeYA
 ._3cykd-VfN_xBxf3Qxriccm ._5wILZhsLODVwGfcJ0hKmJ {
 	display: none !important;
 }
-/*Hide 'Big Picture'*/
-._3LKQ3S_yqrebeNLF6aeiog {
-	display: none;
+/* 改动: 大屏幕使用原生按钮，排在账户右侧；不移动 React 节点或替换原生事件 */
+._3cykd-VfN_xBxf3Qxriccm > :has(._3LKQ3S_yqrebeNLF6aeiog),
+._3cykd-VfN_xBxf3Qxriccm > ._3LKQ3S_yqrebeNLF6aeiog {
+    order: 100;
+}
+/* 改动: 两个入口使用同一方形背景、图标大小及悬停效果 */
+._3cykd-VfN_xBxf3Qxriccm ._3LKQ3S_yqrebeNLF6aeiog,
+._3vCzSrrXZzZjVJFZNg9SGu > .nevko-header-screenshots {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    flex: 0 0 32px;
+    width: 32px;
+    min-width: 32px !important;
+    height: 32px !important;
+    min-height: 32px !important;
+    padding: 0;
+    border: 0;
+    border-radius: 4px;
+    background: rgba(103, 112, 123, .2);
+    color: #8B929A;
+    cursor: pointer;
+    -webkit-app-region: no-drag;
+}
+._3cykd-VfN_xBxf3Qxriccm ._3LKQ3S_yqrebeNLF6aeiog {
+    margin-top: -4px !important;
+    margin-right: 0 !important;
+}
+/* 改动: Steam 监视器图标原本绝对定位 top:10px，改为在按钮内部居中 */
+._3cykd-VfN_xBxf3Qxriccm ._3LKQ3S_yqrebeNLF6aeiog ._34bQcTHo5QKzuujoEyU1tm,
+._3vCzSrrXZzZjVJFZNg9SGu > .nevko-header-screenshots > svg {
+    position: static;
+    top: auto;
+    width: 18px !important;
+    height: 18px !important;
+    margin: 0;
+    pointer-events: none;
+}
+._3cykd-VfN_xBxf3Qxriccm ._3LKQ3S_yqrebeNLF6aeiog:hover,
+._3vCzSrrXZzZjVJFZNg9SGu > .nevko-header-screenshots:hover {
+    background: #6363632e;
+    color: #FFFFFF;
+}
+/* 改动: 截图始终排在添加游戏之前，并支持键盘操作和主题风格提示 */
+._3vCzSrrXZzZjVJFZNg9SGu > .nevko-header-screenshots {
+    order: 0;
+    position: relative;
+    appearance: none;
+}
+.nevko-header-screenshots:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+.nevko-header-screenshots::after {
+    content: attr(aria-label);
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 8px;
+    border-radius: 2px;
+    background: #696773;
+    color: #E0E1E6;
+    box-shadow: 1px 1px 8px #0005, 2px 2px 16px 1px #0005;
+    font-size: 13px;
+    font-weight: normal;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 100;
+}
+.nevko-header-screenshots:hover::after,
+.nevko-header-screenshots:focus-visible::after {
+    opacity: 1;
 }
 /*Change Hover Buttons Background*/
 .RtSv39ZoBOySnb8XQ5hJf._9YK5IY219Pm_F53DAxyYp:not(._1QQWjaXmb1eTHZpeIhQA_5):hover,

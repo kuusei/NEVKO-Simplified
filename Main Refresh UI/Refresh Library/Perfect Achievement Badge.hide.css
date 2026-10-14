@@ -1,0 +1,8 @@
+/* 改动: 关闭全成就标记时同时停用银色奖章，优先于银色奖章的独立设置 */
+:root {
+  --nevko-achievement-badges-enabled: 0 !important;
+}
+
+.nevko-perfect-badge {
+  display: none !important;
+}

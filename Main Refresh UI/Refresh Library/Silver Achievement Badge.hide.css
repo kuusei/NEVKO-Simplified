@@ -1,0 +1,8 @@
+/* 改动: 单独关闭银色成就奖章，保留全成就彩色奖章 */
+:root {
+  --nevko-silver-achievement-threshold: 0;
+}
+
+.nevko-perfect-badge[data-tier="silver"] {
+  display: none !important;
+}

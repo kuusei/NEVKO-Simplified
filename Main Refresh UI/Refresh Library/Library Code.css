@@ -275,8 +275,33 @@ div.ReactVirtualized__Grid__innerScrollContainer > div.Panel {
   transition: .2s linear;
   border-radius: 2px;
 }
+/* 改动: 主页与收藏集按钮之间留 4px 间距，保持右侧图标与筛选入口对齐 */
+._2TKEazUUS3TlniZfpc8OOe {
+  gap: 4px;
+}
 ._3pSPluBgf0NeR1kkCLWMhR._30KGSfPjPskFlnrSxBfkiK {
   margin-left: 0; /* 改动: 左边距 8px 改为 0 */
+  /* 改动: 与下方筛选入口统一为 32px，避免透明边框撑宽导致中心线偏移 */
+  box-sizing: border-box;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+}
+/* 改动: 收藏集四格图标两排等高，四边留白一致，修正原生 9px/8px 的不对称 */
+._3pSPluBgf0NeR1kkCLWMhR._30KGSfPjPskFlnrSxBfkiK .nC-pL16iUnIRcaj1UVnwq {
+  width: 100%;
+  height: 100%;
+  grid-template-columns: repeat(2, 9px);
+  grid-template-rows: repeat(2, 9px);
+  gap: 4px;
+  padding: 0;
+  place-content: center;
+}
+/* 改动: 筛选图标取消原生上边距及行内基线留白，在自己的按钮内居中 */
+._20QAC4WMXm8qFE8waUT5oo .vCCmYvn9yQ_V8CpKupllU ._1TxHdzOt3OD9ikR3xIseKe svg {
+  display: block;
+  margin: 0;
 }
 
 /* ─────────────────────────────────────────────────────────────────────────── */
@@ -473,6 +498,14 @@ div.LowPerfMode ._3DeO92O5aVkcdwEBCJDjWm._3fLo166MlaNqP8r8tTyRz {
 ._2OOzYVWIHaKXm6_7sscT9i > div {
   transition: 1s all ease;
   margin-top: -26px;
+}
+/* 改动: 有链接栏时取消操作区旧的 -26px 重叠，让启动、在线标签及右侧按钮随整排下移。 */
+._27RcNu8aXKBpYkHcNNrt-X:has(> ._3-V8vjmrwuJM6Ws3tsjFJj) > ._3Yf8b2v5oOD8Wqsxu04ar._1U7LKpx70kEsz3jJwAFOi- {
+  margin-top: 0;
+}
+/* 改动: 明确恢复 LinksSection 原生的零下边距，避免新版通用分区 26px 规则覆盖它；内容区位置保持原样。 */
+._27RcNu8aXKBpYkHcNNrt-X > ._3-V8vjmrwuJM6Ws3tsjFJj {
+  margin-bottom: 0;
 }
 .A14yd24JRjhFI-Q1ae6tN {
   transition: 1s all ease;
@@ -911,16 +944,27 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb._3nJyYxGQ3kdwwabPmxNnMe:hover {
   font-size: 18px;
 }
 
-/* Lower Collection Tags - REMOVED */
+/* 改动: 恢复原生分类，按实际信息栏高度避让，保留右对齐及原生宽度约束 */
 ._2b6WkTnmJxMuX1biL7aS3C {
-  display: none;
+  display: flex;
+  top: var(--nevko-collection-top, 16px);
+  max-height: calc(100% - var(--nevko-collection-top, 16px));
 }
-._2b6WkTnmJxMuX1biL7aS3C ._1HS4twEHtDJ_8MWgJT4VBd {
-  font-size: 8px;
+/* 改动: 普通分类使用 12px 字号，隐藏游戏标签保持 Steam 原生样式 */
+._2b6WkTnmJxMuX1biL7aS3C ._1HS4twEHtDJ_8MWgJT4VBd:not(._3-M9bcTzYOSRoajtIRDbka) {
+  font-size: 12px;
   background: color-mix(in srgb, var(--secondary-background) 55%, transparent) !important;
-  color: rgba(255, 255, 255, 0.52);
+  color: rgba(255, 255, 255, 0.85);
   border-radius: 4px;
   box-shadow: 0 0 6px #0000005c;
+}
+/* 改动: 分类文字悬停时变亮，键盘焦点保留清晰轮廓 */
+._2b6WkTnmJxMuX1biL7aS3C ._1HS4twEHtDJ_8MWgJT4VBd:not(._3-M9bcTzYOSRoajtIRDbka):hover {
+  color: #fff;
+}
+._2b6WkTnmJxMuX1biL7aS3C ._1HS4twEHtDJ_8MWgJT4VBd:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
 }
 ._1HS4twEHtDJ_8MWgJT4VBd {
   border: unset;

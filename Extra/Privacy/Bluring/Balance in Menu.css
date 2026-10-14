@@ -1,4 +1,5 @@
 /* Stock Blur*/
+/* 改动: 同时加载到 Steam 主窗口，仅模糊顶栏及账户菜单的余额文字；菜单悬停逻辑保持原样。 */
 ._2jphjrSifC6orDT4g_7Wd {
 	filter: blur(5px);
 }

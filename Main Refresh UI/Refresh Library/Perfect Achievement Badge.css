@@ -1,0 +1,29 @@
+._2-O4ZG0KrnSrzISHBKctFQ ._1vO6BoiVslZgs1kqDGdUs8 {
+  overflow: hidden;
+  flex-wrap: nowrap !important;
+}
+
+.nevko-perfect-badge {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  margin-left: 4px;
+  vertical-align: middle;
+  background: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* 改动: 优先于 Steam 列表通用 SVG 尺寸，保持原生奖章比例和透明背景 */
+._2-O4ZG0KrnSrzISHBKctFQ ._1vO6BoiVslZgs1kqDGdUs8 .nevko-perfect-badge > svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: none !important;
+  box-shadow: none !important;
+}

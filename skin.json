@@ -326,6 +326,63 @@
         }
       }
     },
+    "全成就标记": {
+      "description": "库存列表 100% 成就游戏显示 Steam 彩色奖章；关闭时同时停用银色成就标记",
+      "default": "是",
+      "tab": "界面个性化",
+      "values": {
+        "是": {},
+        "否": {
+          "TargetCss": {
+            "affects": ["^Steam$"],
+            "src": "Main Refresh UI/Refresh Library/Perfect Achievement Badge.hide.css"
+          }
+        }
+      }
+    },
+    "银色成就标记": {
+      "description": "仅在开启全成就标记时生效；未全成就游戏达到所选成就率（含）时显示银色奖章",
+      "default": "80%（含）",
+      "tab": "界面个性化",
+      "values": {
+        "关闭": {
+          "TargetCss": {
+            "affects": ["^Steam$"],
+            "src": "Main Refresh UI/Refresh Library/Silver Achievement Badge.hide.css"
+          }
+        },
+        "60%（含）": {
+          "TargetCss": {
+            "affects": ["^Steam$"],
+            "src": "Main Refresh UI/Refresh Library/Silver Achievement Badge.60.css"
+          }
+        },
+        "80%（含）": {}
+      }
+    },
+    "游戏在线人数 [实验性]": {
+      "description": "启动按钮上方显示当前游戏在线人数；每游戏 15 分钟查询一次，同一 Steam 会话共享缓存且最多一个并发请求；点击查看 SteamDB 图表，需要联网",
+      "default": "关闭",
+      "tab": "界面个性化",
+      "values": {
+        "关闭": {
+          "TargetCss": {
+            "affects": ["^Steam$"],
+            "src": "Main Refresh UI/Refresh Library/Game Player Count.hide.css"
+          }
+        },
+        "开启": {
+          "TargetCss": {
+            "affects": ["^Steam$"],
+            "src": "Main Refresh UI/Refresh Library/Game Player Count.css"
+          },
+          "TargetJs": {
+            "affects": ["^Steam$"],
+            "src": "Main Refresh UI/Refresh Library/Game Player Count.js"
+          }
+        }
+      }
+    },
     "游戏页内容位置": {
       "description": "",
       "default": "居中 [全部]",
@@ -465,14 +522,14 @@
       }
     },
     "模糊余额": {
-      "description": "模糊账户菜单中的钱包余额",
+      "description": "模糊顶栏账户按钮和账户菜单中的钱包余额",
       "default": "否",
       "tab": "隐私",
       "values": {
         "否": {},
         "是": {
           "TargetCss": {
-            "affects": ["Menu$", "SuperNav$"],
+            "affects": ["^Steam$", "Menu$", "SuperNav$"],
             "src": "Extra/Privacy/Bluring/Balance in Menu.css"
           }
         }
@@ -522,8 +579,24 @@
       "TargetJs": "Main Refresh UI/Refresh Header/Header Script.js"
     },
     {
+      "MatchRegexString": "^(Steam|Library Supernav)$",
+      "TargetJs": "Main Refresh UI/Refresh Header/Hidden Games Menu.js"
+    },
+    {
       "MatchRegexString": "^Steam$",
       "TargetCss": "Main Refresh UI/Refresh Library/Library Code.css"
+    },
+    {
+      "MatchRegexString": "^Steam$",
+      "TargetJs": "Main Refresh UI/Refresh Library/Collection Tags.js"
+    },
+    {
+      "MatchRegexString": "^Steam$",
+      "TargetCss": "Main Refresh UI/Refresh Library/Perfect Achievement Badge.css"
+    },
+    {
+      "MatchRegexString": "^Steam$",
+      "TargetJs": "Main Refresh UI/Refresh Library/Perfect Achievement Badge.js"
     },
     {
       "MatchRegexString": "^Steam$",
@@ -547,7 +620,7 @@
     },
     {
       "MatchRegexString": ".ModalDialogPopup",
-      "TargetCss": "Misc/Fix Millennium Stuff/SVGLocation.css"
+      "TargetCss": "Misc/Fix Millenium Stuff/SVGLocation.css"
     },
     {
       "MatchRegexString": "^Steam$",
